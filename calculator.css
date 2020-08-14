@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 20px;
+    background-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.onscreen{
+    width: 95%;
+    height: 100px;
+    background-color:#f2f2f2;
+    margin: 40px 20px 20px 9px;
+    color: black;;
+    font-size: 30px;
+    text-align: end;
+    border: 1px solid #ccc;
+}
+.keys{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(50px, auto);
+    grid-row-gap: 12px;
+}
+.keys > input{
+    width: 55px;
+    margin: auto;
+    height: 50px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: bold;
+}
+#m{
+    background-color: gray;
+}
+#sign{
+    background-color: #cc0000;
+}
+h2{
+    text-align: center;
+    color: white;
+}
+#equals{
+background-color:#ff9900;
+}
+#signp{
+    grid-column: 5/6;
+    grid-row: 5/8;
+    margin-top: 0;
+    height: 170px;
+}
