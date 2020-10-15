@@ -1,19 +1,30 @@
 var operate, fValue, sValue;
-var state = false;
+var state = true;
 
 
 function onoff(){
 	var control = con.value;
-	if( control== 'ON' && state == false){
-	document.getElementById('con').value= "OFF";
-	state = true;
-	pp.value += '0';
-	}
-	else{
+	if (control =='OFF' && state== true){
 		document.getElementById('con').value= "ON";
 		state = false;
 		pp.value = "";
+
 	}
+	else {
+		document.getElementById('con').value= "OFF";
+		state = true;
+		pp.value += 0 ;
+	}
+	// if( control== 'ON' && state == false){
+	// document.getElementById('con').value= "OFF";
+	// state = true;
+	// pp.value += '0';
+	// }
+	// else{
+	// 	document.getElementById('con').value= "ON";
+	// 	state = false;
+	// 	pp.value = "";
+	// }
 }
 
 function shownum(x)   {
@@ -26,30 +37,36 @@ function shownum(x)   {
 	}    
  }
 function operators(u){
-	fValue = parseFloat(pp.value);
-	pp.value = "";
-	operate = u;
+	if (state== true){
+		fValue = parseFloat(pp.value);
+		pp.value = "";
+		operate = u;
+	}
+	
 }
 function equal(){
-	sValue = parseFloat(pp.value);
-	if( operate == '+'){
-		pp.value = fValue + sValue;
+	if (state == true){
+		sValue = parseFloat(pp.value);
+		if( operate == '+'){
+			pp.value = fValue + sValue;
+		}
+		else if( operate == '-'){
+			pp.value = fValue - sValue;
+		}
+		else if( operate == '*'){
+			pp.value = fValue * sValue;
+		}
+		else if( operate == '/'){
+			pp.value = fValue / sValue;
+		}
+		else if( operate == '%'){
+			pp.value = fValue % sValue;
+		}
+		else if( operate == '^'){
+			pp.value = Math.pow(fValue, sValue);
+		}
 	}
-	else if( operate == '-'){
-		pp.value = fValue - sValue;
-	}
-	else if( operate == '*'){
-		pp.value = fValue * sValue;
-	}
-	else if( operate == '/'){
-		pp.value = fValue / sValue;
-	}
-	else if( operate == '%'){
-		pp.value = fValue % sValue;
-	}
-	else if( operate == '^'){
-		pp.value = Math.pow(fValue, sValue);
-	}
+	
 }
 function clearm() {
 	if (state == true){
